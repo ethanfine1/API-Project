@@ -29,6 +29,7 @@ document.getElementById("charSubmit").addEventListener("click", function(event) 
     }).then(function(json) {
       if (json.length != 1) {
         document.getElementById("singleChar").innerHTML = result;
+        document.getElementById("quote").innerHTML = result;
         for (i = 0; i < json.length; i++) {
           result += "<p>" + json[i].name + "</p>";
 
@@ -41,6 +42,7 @@ document.getElementById("charSubmit").addEventListener("click", function(event) 
         }
       }
       else{
+        document.getElementById("quote").innerHTML = result;
         result += "<h1>" + json[0].name + "</h1>";
         result += "<p> portrayed by " + json[0].portrayed;
         if(json[0].birthday != null){
